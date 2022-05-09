@@ -13,19 +13,20 @@ namespace UniversityConsoleApp.BL
         {
 
         }
-        public Group(Student[] students)
+        public Group(Student[] students ,Teacher[] teachers)
         {
             _id = Guid.NewGuid();
             Console.WriteLine($"Students Group {_id}");
-            StudentManager.Print(students);
-        }
-        public Group(Teacher[] teachers)
-        {
+            _students = students;
+            StudentManager.Print(_students);
             _id = Guid.NewGuid();
             Console.WriteLine($"Teachers Group {_id} ");
-            TeacherManager.Print(teachers);
+            _teachers = teachers;
+            TeacherManager.Print(_teachers);
         }
         public Guid _id;
+        public Student[] _students;
+        public Teacher[] _teachers;
 
     }
 }

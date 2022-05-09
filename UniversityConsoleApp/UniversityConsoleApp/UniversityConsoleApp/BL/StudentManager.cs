@@ -25,21 +25,20 @@ namespace UniversityConsoleApp.BL
             Console.WriteLine($"**********{student._id}-Teacher**********");
             if (student._teacher != null)
                 Console.WriteLine($"id:{student._teacher._id} name:{student._teacher._firstName} lastName:{student._teacher._lastName} age:{student._teacher._age}");
-            else
-                Console.WriteLine("-------------------------------------------------------------------");
         }
- 
+
         public static void Print(Student[] students)
         {
+
             for (int i = 0; i < students.Length; i++)
             {
                 Console.WriteLine("**********Student**********");
                 Console.WriteLine($"id:{students[i]._id} name:{students[i]._firstName} lastName:{students[i]._lastName} age:{students[i]._age}");
-                Console.WriteLine($"**********{students[i]._id}-Teacher**********");
                 if (students[i]._teacher != null)
+                {
+                    Console.WriteLine($"**********Student id:{students[i]._id}-Teacher**********");
                     Console.WriteLine($"id:{students[i]._teacher._id} name:{students[i]._teacher._firstName} lastName:{students[i]._teacher._lastName} age:{students[i]._teacher._age}");
-                else
-                    Console.WriteLine("-------------------------------------------------------------------");
+                }
 
             }
         }

@@ -8,21 +8,19 @@ namespace UniversityConsoleApp
         static void Main(string[] args)
         {
             Student st = StudentManager.Create("John", "Doe", 19);
-           // StudentManager.Print(st);
+            // StudentManager.Print(st);
             Student[] students = StudentManager.Create(21, 18);
-           // StudentManager.Print(students);
+            // StudentManager.Print(students);
             Teacher tch = TeacherManager.Create("John1", "Doe1", 21);
             Teacher[] teachers = TeacherManager.Create(5, 19);
-           // TeacherManager.Print(teachers);
+            // TeacherManager.Print(teachers);
             st = UniversityManager.SwapWithTeacher(st, tch);
-           // StudentManager.Print(st);
+            // StudentManager.Print(st);
+            Group group = new Group(students, teachers);
             teachers = UniversityManager.SwapWithStudents(teachers, students);
             students = UniversityManager.SwapWithTeachers(students, teachers);
             //StudentManager.Print(students);
-           // TeacherManager.Print(teachers);
-            
-            Group groupst=new Group(students);
-            Group grouptch = new Group(teachers);
+            // TeacherManager.Print(teachers);
             Console.ReadLine();
         }
     }
