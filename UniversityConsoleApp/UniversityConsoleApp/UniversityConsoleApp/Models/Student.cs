@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace UniversityConsoleApp.Models
 {
@@ -14,5 +15,6 @@ namespace UniversityConsoleApp.Models
 
         }
         public Teacher _teacher;
+        public Group _group;
     }
 }

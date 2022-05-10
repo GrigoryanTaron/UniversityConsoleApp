@@ -20,7 +20,7 @@ namespace UniversityConsoleApp.BL
         public static void Print(Teacher teacher)
         {
             Console.WriteLine("**********Teacher********");
-            Console.WriteLine($"id:{teacher._id} name: {teacher._firstName} lastName {teacher._lastName} age: {teacher._age}");
+            Console.WriteLine($"id:{teacher._id} name:{teacher._firstName} lastName{teacher._lastName} age:{teacher._age}");
             Console.WriteLine($"**************{teacher._id}-Student**********");
             if (teacher._students != null)
                 for (int i = 0; i < teacher._students.Length; i++)
@@ -41,8 +41,8 @@ namespace UniversityConsoleApp.BL
                     {
                         Console.WriteLine($"id:{teachers[i]._students[j]._id} name:{teachers[i]._students[j]._firstName} lastName:{teachers[i]._students[j]._lastName} age:{teachers[i]._students[j]._age}");
                     }
-
                 }
+
             }
         }
 

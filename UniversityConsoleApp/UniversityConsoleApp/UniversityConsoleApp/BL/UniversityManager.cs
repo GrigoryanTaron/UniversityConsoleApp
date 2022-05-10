@@ -45,5 +45,52 @@ namespace UniversityConsoleApp.BL
             teacher._students = students;
             return teacher;
         }
+        public static Group SwapWithStudents(Group group, Student[] students)
+        {
+            group._students = students;
+            return group;
+        }
+        public static Group SwapWithTeachers(Group group, Teacher[] teachers)
+        {
+            group._teachers = teachers;
+            return group;
+        }
+        public static Student[] SwapWithGroup(Student[] students, Group group)
+        {
+            for (int i = 0; i < students.Length; i++)
+            {
+                students[i]._group = group;
+            }
+            return students;
+        }
+        public static Teacher[] SwapWithGroup(Teacher[] teachers, Group group)
+        {
+            for (int i = 0; i < teachers.Length; i++)
+            {
+                teachers[i]._group = group;
+            }
+            return teachers;
+        }
+        public static Teacher[] SwapWithGroups(Teacher[] teachers, Group[] groups)
+        {
+            int mincount = teachers.Length / groups.Length;
+            for (int i = 0; i < groups.Length - 1; i++)
+            {
+                groups[i]._teachers = new Teacher[mincount];
+                for (int j = 0; j < groups.Length; j++)
+                {
+                    groups[i]._teachers[j] = teachers[i * mincount + j];
+                }
+            }
+            int lastcount = mincount * (groups.Length - 1);
+            groups[groups.Length - 1]._teachers = new Teacher[teachers.Length - lastcount];
+            int counter = 0;
+            for (int i = lastcount; i < teachers.Length; i++)
+            {
+                groups[groups.Length - 1]._teachers[counter++] = teachers[i];
+            }
+            return teachers;
+
+        }
     }
 }

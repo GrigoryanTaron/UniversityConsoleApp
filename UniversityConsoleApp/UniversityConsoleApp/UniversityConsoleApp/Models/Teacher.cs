@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace UniversityConsoleApp.Models
 {
@@ -13,8 +14,9 @@ namespace UniversityConsoleApp.Models
         {
 
         }
-
-
         public Student[] _students;
+        public Group _group;
+        public Group[] _groups;
+
     }
 }
