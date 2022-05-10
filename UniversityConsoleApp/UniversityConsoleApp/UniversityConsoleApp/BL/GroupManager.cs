@@ -51,12 +51,20 @@ namespace UniversityConsoleApp.BL
                 }
             }
         }
-        public static void Print(Group[]groups)
+        public static void Print(Group[] groups)
         {
             for (int i = 0; i < groups.Length; i++)
             {
                 Console.WriteLine($"**************Group**************");
                 Console.WriteLine($"GroupId:{groups[i]._id} Groupname:{groups[i]._name}");
+                if (groups[i]._teachers != null)
+                {
+                    Console.WriteLine($"******GroupId{groups[i]._id}-Teachers*******");
+                    for (int j = 0; j < groups[i]._teachers.Length; j++)
+                    {
+                        Console.WriteLine($"TchId{groups[i]._teachers[j]._id} TchName:{groups[i]._teachers[j]._firstName} TchLastName:{groups[i]._teachers[j]._lastName} tchAge:{groups[i]._teachers[j]._age}");
+                    }
+                }
             }
         }
 

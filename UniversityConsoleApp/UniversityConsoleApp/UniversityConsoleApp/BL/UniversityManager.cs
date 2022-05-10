@@ -77,7 +77,7 @@ namespace UniversityConsoleApp.BL
             for (int i = 0; i < groups.Length - 1; i++)
             {
                 groups[i]._teachers = new Teacher[mincount];
-                for (int j = 0; j < groups.Length; j++)
+                for (int j = 0; j < groups[i]._teachers.Length; j++)
                 {
                     groups[i]._teachers[j] = teachers[i * mincount + j];
                 }

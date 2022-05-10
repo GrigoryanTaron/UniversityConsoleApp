@@ -12,19 +12,22 @@ namespace UniversityConsoleApp
             Student[] students = StudentManager.Create(21, 18);
             //StudentManager.Print(students);
             Teacher tch = TeacherManager.Create("John1", "Doe1", 21);
-            Teacher[] teachers = TeacherManager.Create(5, 30);
+            Teacher[] teachers = TeacherManager.Create(8, 30);
             // TeacherManager.Print(teachers);
             st = UniversityManager.SwapWithTeacher(st, tch);
             // StudentManager.Print(st);
             Group group = GroupManager.Create("math");
             group = UniversityManager.SwapWithStudents(group, students);
-            GroupManager.Print(group);
+           // GroupManager.Print(group);
             group = UniversityManager.SwapWithTeachers(group, teachers);
-            GroupManager.Print(group);
+            //  GroupManager.Print(group);
+            Group[] groups = GroupManager.Create(3);
             //teachers = UniversityManager.SwapWithStudents(teachers, students);
             // students = UniversityManager.SwapWithTeachers(students, teachers);
             //StudentManager.Print(students);
             // TeacherManager.Print(teachers);
+            teachers = UniversityManager.SwapWithGroups(teachers, groups);
+            GroupManager.Print(groups);
             Console.ReadLine();
         }
     }
