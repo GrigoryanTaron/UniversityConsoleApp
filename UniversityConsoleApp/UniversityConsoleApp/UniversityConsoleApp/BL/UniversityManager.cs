@@ -63,15 +63,7 @@ namespace UniversityConsoleApp.BL
             }
             return students;
         }
-        public static Teacher[] SwapWithGroup(Teacher[] teachers, Group group)
-        {
-            for (int i = 0; i < teachers.Length; i++)
-            {
-                teachers[i]._group = group;
-            }
-            return teachers;
-        }
-        public static Teacher[] SwapWithGroups(Teacher[] teachers, Group[] groups)
+        public static Group[] SwapWithTeachers(Group[] groups, Teacher[] teachers)
         {
             int mincount = teachers.Length / groups.Length;
             for (int i = 0; i < groups.Length - 1; i++)
@@ -89,8 +81,20 @@ namespace UniversityConsoleApp.BL
             {
                 groups[groups.Length - 1]._teachers[counter++] = teachers[i];
             }
-            return teachers;
+            return groups;
+        }
+        public static Teacher[] SwapWithGroups(Teacher[] teachers, Group[] groups)
+        {
+            for (int i = 0; i < teachers.Length; i++)
+            {
 
+                teachers[i]._groups = new Group[groups.Length];
+                for (int j = 0; j < teachers[i]._groups.Length; j++)
+                {
+                    teachers[i]._groups[j] = groups[j];
+                }
+            }
+            return teachers;
         }
     }
 }

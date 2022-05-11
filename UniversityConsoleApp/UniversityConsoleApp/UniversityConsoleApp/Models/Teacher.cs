@@ -15,8 +15,6 @@ namespace UniversityConsoleApp.Models
 
         }
         public Student[] _students;
-        public Group _group;
         public Group[] _groups;
-
     }
 }

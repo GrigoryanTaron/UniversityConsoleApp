@@ -12,12 +12,12 @@ namespace UniversityConsoleApp.Models
         {
 
         }
-        public Models(string firstName,string lastName,int age)
+        public Models(string firstName, string lastName, int age)
         {
             _id = Guid.NewGuid();
-            _firstName=firstName;
-            _lastName=lastName;
-            _age=age;
+            _firstName = firstName;
+            _lastName = lastName;
+            _age = age;
 
         }
         public Guid _id;

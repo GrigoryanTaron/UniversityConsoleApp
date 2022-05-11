@@ -43,6 +43,14 @@ namespace UniversityConsoleApp.BL
                     }
                 }
 
+                if (teachers[i]._groups != null)
+                {
+                    for (int j = 0; j < teachers[i]._groups.Length; j++)
+                    {
+                        Console.WriteLine($"GroupId:{teachers[i]._groups[j]._id} GroupName:{teachers[i]._groups[j]._name}");
+                    }
+
+                }
             }
         }
 

@@ -26,7 +26,7 @@ namespace UniversityConsoleApp.BL
             Console.WriteLine($"**********{student._id}-Teacher**********");
             if (student._teacher != null)
                 Console.WriteLine($"id:{student._teacher._id} TchName:{student._teacher._firstName} TchLastName:{student._teacher._lastName} TchAge:{student._teacher._age}");
-           
+
         }
 
         public static void Print(Student[] students)

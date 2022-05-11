@@ -13,7 +13,7 @@ namespace UniversityConsoleApp.Models
             _id = Guid.NewGuid();
             _name = name;
         }
-      
+
         public Guid _id;
         public string _name;
         public Student[] _students;
