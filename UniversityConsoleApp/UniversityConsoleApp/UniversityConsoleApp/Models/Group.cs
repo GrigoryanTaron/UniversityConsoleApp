@@ -2,21 +2,20 @@
 
 namespace UniversityConsoleApp.Models
 {
-    public class Group
+    public class Group:ModelBase
     {
         public Group()
         {
 
         }
-        public Group(string name)
+        public Group(string name):base()
         {
-            _id = Guid.NewGuid();
+            
             _name = name;
         }
 
-        public Guid _id;
+        
         public string _name;
-        public Student[] _students;
-        public Teacher[] _teachers;
+       
     }
 }

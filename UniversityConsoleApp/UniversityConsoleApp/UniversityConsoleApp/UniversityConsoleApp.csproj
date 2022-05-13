@@ -48,7 +48,7 @@
     <Compile Include="BL\TeacherManager.cs" />
     <Compile Include="BL\StudentManager.cs" />
     <Compile Include="BL\UniversityManager.cs" />
-    <Compile Include="Models\Models.cs" />
+    <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />

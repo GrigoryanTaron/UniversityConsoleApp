@@ -25,7 +25,7 @@ namespace UniversityConsoleApp.BL
             Console.WriteLine($"id:{student._id} StName:{student._firstName} StLastName:{student._lastName} StAge:{student._age}");
             Console.WriteLine($"**********{student._id}-Teacher**********");
             if (student._teacher != null)
-                Console.WriteLine($"id:{student._teacher._id} TchName:{student._teacher._firstName} TchLastName:{student._teacher._lastName} TchAge:{student._teacher._age}");
+                Console.WriteLine($"id:{student._teacher._id} TchName:{student._teacher.FirstName} TchLastName:{student._teacher.LastName} TchAge:{student._teacher.Age}");
 
         }
 
@@ -39,7 +39,7 @@ namespace UniversityConsoleApp.BL
                 if (students[i]._teacher != null)
                 {
                     Console.WriteLine($"**********Student id:{students[i]._id}-Teacher**********");
-                    Console.WriteLine($"id:{students[i]._teacher._id} TchName:{students[i]._teacher._firstName} TchLastName:{students[i]._teacher._lastName} TchAge:{students[i]._teacher._age}");
+                    Console.WriteLine($"id:{students[i]._teacher._id} TchName:{students[i]._teacher.FirstName} TchLastName:{students[i]._teacher.LastName} TchAge:{students[i]._teacher.Age}");
                 }
                 if (students[i]._group != null)
                     Console.WriteLine(value: $"GroupId:{students[i]._group._id} GroupName:{students[i]._group._name}");
