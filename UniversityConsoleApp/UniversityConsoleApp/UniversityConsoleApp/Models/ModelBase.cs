@@ -8,13 +8,6 @@ namespace UniversityConsoleApp.Models
 {
     public class ModelBase
     {
-        
-        public ModelBase()
-        {
-            
-            
-        }
-        public  Guid _id { get => Guid.NewGuid(); }
-        
+        public Guid _id { get; } = Guid.NewGuid();
     }
 }

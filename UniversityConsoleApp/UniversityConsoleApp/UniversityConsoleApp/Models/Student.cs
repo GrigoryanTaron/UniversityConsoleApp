@@ -5,22 +5,11 @@ namespace UniversityConsoleApp.Models
 {
     public class Student : ModelBase
     {
-        public Student() : base()
-        {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get => _age; set => _age = value < 16 ? throw new Exception("Age of student must be >16") : value; }
 
-        }
-
-        public Student(string firstName, string lastName, int age) : base()
-        {
-            _firstName = firstName;
-            _lastName = lastName;
-            _age = age;
-
-        }
-
-        public string _firstName;
-        public string _lastName;
-        public int _age;
+        private int _age;
         public Teacher _teacher;
         public Group _group;
     }

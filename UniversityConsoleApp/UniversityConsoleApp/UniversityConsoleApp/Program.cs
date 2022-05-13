@@ -7,17 +7,20 @@ namespace UniversityConsoleApp
     {
         static void Main(string[] args)
         {
-            Student st = StudentManager.Create("John", "Doe", 19);
-            Student[] students = StudentManager.Create(21, 18);
-            Teacher tch = TeacherManager.Create("John1", "Doe1", 21);
-            Teacher[] teachers = TeacherManager.Create(8, 30);
-            st = UniversityManager.SwapWithTeacher(st, tch);
-            Group group = GroupManager.Create("math");
-           
-            Group[] groups = GroupManager.Create(3);
+            Student st = StudentManager.Create("John", "Doe", 17);
+            Student[] students = StudentManager.Create(7, 18);
+            Teacher tch = TeacherManager.Create("John1", "Doe1", 22);
+            Teacher[] teachers = TeacherManager.Create(6, 22);
+            StudentManager.Print(st);
+            TeacherManager.Print(tch);
+            TeacherManager.Print(teachers);
+            StudentManager.Print(students);
             teachers = UniversityManager.SwapWithStudents(teachers, students);
             students = UniversityManager.SwapWithTeachers(students, teachers);
-           
+            TeacherManager.Print(teachers);
+            StudentManager.Print(students);
+            Group group = GroupManager.Create("math");
+            Group[] groups = GroupManager.Create(3);
             teachers = UniversityManager.SwapWithGroups(teachers, groups);
             TeacherManager.Print(teachers);
             Console.ReadLine();
