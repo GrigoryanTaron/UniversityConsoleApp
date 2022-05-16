@@ -44,11 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\GroupManager.cs" />
+    <Compile Include="BL\ManagerBase.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="BL\TeacherManager.cs" />
     <Compile Include="BL\StudentManager.cs" />
     <Compile Include="BL\UniversityManager.cs" />
     <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />

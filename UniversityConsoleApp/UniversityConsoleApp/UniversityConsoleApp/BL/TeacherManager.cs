@@ -2,17 +2,17 @@
 using UniversityConsoleApp.Models;
 namespace UniversityConsoleApp.BL
 {
-    public static class TeacherManager
+    public  class TeacherManager:ManagerBase
     {
         const short maxAge = 139;
-        public static Teacher Create(string firstName, string lastName, int age)
+        public override Person Create(string firstName, string lastName, int age)
             => new Teacher()
             {
                 FirstName = firstName,
                 LastName = lastName,
                 Age = age,
             };
-        public static Teacher[] Create(int count, int minAge)
+        public override Person[] Create(int count, int minAge)
         {
             Teacher[] teachers = new Teacher[count];
             Random rnd = new Random();

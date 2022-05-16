@@ -3,17 +3,25 @@ using UniversityConsoleApp.Models;
 
 namespace UniversityConsoleApp.BL
 {
-    public static class StudentManager
+    public  class StudentManager:ManagerBase
     {
+        //public override Person Create(string firstName, string lastName, int age)
+        //{
+        //    return base.Create(firstName, lastName, age);
+        //}
+        //public override Person[] Create(int count, int minage)
+        //{
+        //    return base.Create(count, minage);
+        //}
         const short maxAge = 139;
-        public static Student Create(string firstName, string lastName, int age)
+        public override Person Create(string firstName, string lastName, int age)
             => new Student()
             {
                 FirstName = firstName,
                 LastName = lastName,
                 Age = age,
             };
-        public static Student[] Create(int count, int minAge)
+        public override Person[] Create(int count, int minage)
         {
             Student[] students = new Student[count];
             Random rnd = new Random();
@@ -23,10 +31,11 @@ namespace UniversityConsoleApp.BL
                 {
                     FirstName = $"name{i}",
                     LastName = $"lastName{i}",
-                    Age = rnd.Next(minAge, maxAge),
+                    Age = rnd.Next(minage, maxAge),
                 };
             }
             return students;
+;
         }
         public static void Print(Student student)
         {
