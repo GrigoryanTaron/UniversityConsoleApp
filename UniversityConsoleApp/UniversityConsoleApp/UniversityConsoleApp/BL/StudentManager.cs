@@ -1,43 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
+using UniversityConsoleApp.Interface;
 using UniversityConsoleApp.Models;
 
 namespace UniversityConsoleApp.BL
 {
-    public  class StudentManager:ManagerBase
+    public class StudentManager : ManagerBase, ICreate
     {
-        //public override Person Create(string firstName, string lastName, int age)
-        //{
-        //    return base.Create(firstName, lastName, age);
-        //}
-        //public override Person[] Create(int count, int minage)
-        //{
-        //    return base.Create(count, minage);
-        //}
+       
         const short maxAge = 139;
-        public override Person Create(string firstName, string lastName, int age)
-            => new Student()
-            {
-                FirstName = firstName,
-                LastName = lastName,
-                Age = age,
-            };
-        public override Person[] Create(int count, int minage)
+       public Person Create(string firstName, string lastName, int age)
+       => new Student()
+       {
+           FirstName = firstName,
+           LastName = lastName,
+           Age = age,
+       };
+
+      public List <Person> Create(int count, int minage)
         {
-            Student[] students = new Student[count];
+            List<Person> students = new List<Person>(count);
             Random rnd = new Random();
-            for (int i = 0; i < students.Length; i++)
+            for (int i = 0; i < students.Count; i++)
             {
-                students[i] = new Student()
+                students.Add(new Student
                 {
                     FirstName = $"name{i}",
                     LastName = $"lastName{i}",
                     Age = rnd.Next(minage, maxAge),
-                };
+                });
+                
             }
             return students;
-;
         }
-        public static void Print(Student student)
+
+        public  void Print(Student student)
         {
             Console.WriteLine("**********Student**********");
             Console.WriteLine($"id:{student._id} StName:{student.FirstName} StLastName:{student.LastName} StAge:{student.Age}");
@@ -45,9 +42,14 @@ namespace UniversityConsoleApp.BL
             if (student._teacher != null)
                 Console.WriteLine($"id:{student._teacher._id} TchName:{student._teacher.FirstName} TchLastName:{student._teacher.LastName} TchAge:{student._teacher.Age}");
         }
-        public static void Print(Student[] students)
+        public void Print(List<Person> personsSt)
         {
-            for (int i = 0; i < students.Length; i++)
+            List <Student> students = new List<Student>(personsSt.Count);
+            for(int i=0;i<personsSt.Count;i++)
+            {
+                students.Add((Student)personsSt[i]);
+            }
+            for (int i = 0; i < students.Count; i++)
             {
                 Console.WriteLine("**********Student**********");
                 Console.WriteLine($"id:{students[i]._id} StName:{students[i].FirstName} StLastName:{students[i].LastName} StAge:{students[i].Age}");
@@ -60,5 +62,6 @@ namespace UniversityConsoleApp.BL
                     Console.WriteLine(value: $"GroupId:{students[i]._group._id} GroupName:{students[i]._group.Name}");
             }
         }
+
     }
 }

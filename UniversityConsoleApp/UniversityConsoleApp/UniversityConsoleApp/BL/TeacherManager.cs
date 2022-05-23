@@ -1,34 +1,41 @@
 ﻿using System;
+using System.Collections.Generic;
+using UniversityConsoleApp.Interface;
 using UniversityConsoleApp.Models;
 namespace UniversityConsoleApp.BL
 {
-    public  class TeacherManager:ManagerBase
+    public  class TeacherManager:ManagerBase,ICreate,IPrint
     {
         const short maxAge = 139;
-        public override Person Create(string firstName, string lastName, int age)
+   public Person Create(string firstName, string lastName, int age)
             => new Teacher()
             {
                 FirstName = firstName,
                 LastName = lastName,
                 Age = age,
             };
-        public override Person[] Create(int count, int minAge)
+      public List<Person> Create(int count, int minAge)
         {
-            Teacher[] teachers = new Teacher[count];
+           List<Person> teachers = new List< Person>(count);
             Random rnd = new Random();
-            for (int i = 0; i < teachers.Length; i++)
+            for (int i = 0; i < teachers.Count; i++)
             {
-                teachers[i] = new Teacher()
+                teachers.Add( new Teacher()
                 {
                     FirstName = $" name{i}",
                     LastName = $" lastName{i}",
                     Age = rnd.Next(minAge, maxAge),
-                };
+                });
             }
             return teachers;
         }
-        public static void Print(Teacher teacher)
+
+       
+
+         void IPrint.Print(Person person)
         {
+            Teacher teacher=new Teacher();
+            teacher=(Teacher)person;
             Console.WriteLine("**********Teacher********");
             Console.WriteLine($"id:{teacher._id} name:{teacher.FirstName} lastName:{teacher.LastName} age:{teacher.Age}");
             Console.WriteLine($"**************{teacher._id}-Student**********");
@@ -38,9 +45,16 @@ namespace UniversityConsoleApp.BL
                     Console.WriteLine($"id:{teacher._students[i]._id} StName:{teacher._students[i].FirstName} StLastName:{teacher._students[i].LastName} StAge:{teacher._students[i].Age}");
                 }
         }
-        public static void Print(Teacher[] teachers)
+       public  void Print(List<Person>personsTchs)
         {
-            for (int i = 0; i < teachers.Length; i++)
+           List< Teacher> teachers = new List <Teacher>(personsTchs.Count);
+            for(int i=0;i<personsTchs.Count;i++)
+            {
+                teachers.Add((Teacher)personsTchs[i]);
+            }
+            
+
+            for (int i = 0; i < teachers.Count; i++)
             {
                 Console.WriteLine("**********Teacher********");
                 Console.WriteLine($"id:{teachers[i]._id} TchName:{teachers[i].FirstName} TchLastName{teachers[i].LastName} TchAge:{teachers[i].Age}");
@@ -64,5 +78,6 @@ namespace UniversityConsoleApp.BL
             }
         }
 
+       
     }
 }
