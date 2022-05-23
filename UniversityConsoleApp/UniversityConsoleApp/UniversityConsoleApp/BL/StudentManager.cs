@@ -21,7 +21,7 @@ namespace UniversityConsoleApp.BL
         {
             List<Person> students = new List<Person>(count);
             Random rnd = new Random();
-            for (int i = 0; i < students.Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 students.Add(new Student
                 {

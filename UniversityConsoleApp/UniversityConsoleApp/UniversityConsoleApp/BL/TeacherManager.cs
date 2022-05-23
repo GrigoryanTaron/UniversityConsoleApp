@@ -18,7 +18,7 @@ namespace UniversityConsoleApp.BL
         {
            List<Person> teachers = new List< Person>(count);
             Random rnd = new Random();
-            for (int i = 0; i < teachers.Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 teachers.Add( new Teacher()
                 {
